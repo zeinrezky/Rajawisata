@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	 <head>
+        <title>Raja Wisata</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+          <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' /> 
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+		
+		<!-- Custom Style -->
+        <link rel="stylesheet" href="css/style.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/grid_bs.css" id='jQMnDColor' />
+		
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+		<script src="js/core_api.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){ 
+			
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('.scrollup').fadeIn();
+				} else {
+					$('.scrollup').fadeOut();
+				}
+			}); 
+			
+			$('.scrollup').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+			});
+ 
+		});
+		</script>
+		<script>
+console.log("ListData :: init");
+var pagesHistory = [];
+var currentPage = {};
+var path = "";
+
+
+currentPage = {};
+
+currentPage.detailPage = function(id) {
+	sessionStorage.setItem("id", id);
+	window.location = "detailnotes.html#" +id;
+};	
+
+function loadingAjax() {
+	$.ajax({
+		type: "get",
+		url: serviceURL + 'get_notes.php' ,
+		dataType: "json",
+		beforeSend: function() {
+             $.mobile.loader.prototype.options.text = "loading";
+					$.mobile.loader.prototype.options.textVisible = false;
+					$.mobile.loader.prototype.options.theme = "a";
+					$.mobile.loading( 'show');		
+		},
+		success: function(data) {
+			var ul = $('#listNote');
+			var html = '';
+			$.each(data.last, function(index, item) {
+				html += '<li class="padding-notes ui-li-has-thumb ui-first-child ui-last-child">';
+				html += '<a href="#" class="nav-index-list list-notes ui-btn ui-btn-icon-right ui-icon-carat-r" onclick="currentPage.detailPage(' + item.id + ');" >';
+				html += '<img  class="border-notes" src="'+linkImg+''+item.image+'"/>';
+				html += '<span class="title-notes">'+item.title+'</span>';
+				html += '<p class="des-notes">'+item.description+'</p>';
+				html += '</a></li>';
+			});
+			ul.append(html);
+			
+			$.mobile.loading( 'hide');		
+		},
+		error: function() {
+			
+		}
+	});
+	}
+
+			function search(){
+				$("#search").toggle();
+			}
+			function tour_package(){
+				window.location = "index.html";
+			}
+			function travel_package(){
+				window.location = "travelpackage.html";
+			}
+			function about_us(){
+				window.location = "aboutus.html";
+			}
+			function contact_us(){
+				window.location = "contactus.html";
+			}
+			function tour_event(){
+				window.location = "travel_event.html";
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+		
+    </head>
+ 
+	<body onload="loadingAjax();">
+     <div data-role="page" data-theme='b' style="background:#57b8e3;">
+	<!-- 	<div data-role="content">   
+			<div data-nativedroid-plugin="splashscreen" data-nativedroid-splashscreen-time="4" data-nativedroid-splashscreen-animation="fadeOut" data-nativedroid-background="img/Splash screen.jpg">	
+			</div>
+		</div> -->
+		
+        <div data-role="header"  data-tap-toggle="false" data-theme='b' >
+				<div class="wrapper">
+					<img src="img/header.png" class="img-responsive">
+					<div class="title">
+						<span class="first-title">Travel</span> <span class="second-title">Notes</span>
+					</div>
+				</div>
+				<span class="fa fa-search search" Onclick="search()"></span>
+				<div class="" id="search">
+					<input style="color:#333;" id="filterBasic-input" data-type="search" placeholder="">
+				</div>
+        </div>
+        
+        <div data-role="content">
+		
+		<div class="trip">
+					<div data-role="navbar" >
+						<ul>
+							<li  style="background:#4d7284;"><a href="#" onClick="travel_package()" class="private-trip" style="  border-right: 1px solid #fff;">Article</a></li>
+							<li><a  href="#" onClick="tour_event()" class="open-trip" >Event</a></li>
+						</ul>
+					</div>
+				</div>
+		<ul id="listNote" data-role="listview"  data-divider-theme="b"  data-filter="true" data-input="#filterBasic-input">
+  
+        </ul>
+		
+        </div>
+		<div data-position="fixed" data-tap-toggle="true" data-role="footer" data-theme='b'>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" onClick="tour_package()"><img src="img/menu_tourpackage.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px"><!-- <span class="footer-title1">Tour</span> <span  class="footer-title2">Package<span> --></a></li>
+					<li style="background:#4d7284;"><a href="#" onClick="travel_package()"><img src="img/menu_travelnotes.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Travel </span> <span  class="footer-title2">Notes<span> --></a></li>
+					<li><a href="#" onClick="about_us()"><img src="img/menu_aboutus.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">About</span> <span  class="footer-title2">Us<span> --></a></li>
+					<li><a href="#" onClick="contact_us()"><img src="img/menu_contact_us.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Contact</span> <span  class="footer-title2">Us<span> --></a></li>
+				</ul>
+			</div>
+		</div>
+    </div>    
+	<a href="#" class="scrollup" style="display: none;">Scroll</a>
+     <script src="js/nativedroid.script.js"></script>
+    </body>
+</html>

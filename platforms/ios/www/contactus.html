@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+	 <head>
+        <title>Raja Wisata</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+          <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' /> 
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+		
+		<!-- Custom Style -->
+        <link rel="stylesheet" href="css/style.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/grid_bs.css" id='jQMnDColor' />
+		
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="cordova.js"></script>
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+		<script>
+		function tour_package(){
+				window.location = "index.html";
+			}
+			function travel_package(){
+				window.location = "travelpackage.html";
+			}
+			function about_us(){
+				window.location = "aboutus.html";
+			}
+			function contact_us(){
+				window.location = "contactus.html";
+			}
+		</script>
+    </head>
+ 
+	<body>
+     <div data-role="page" data-theme='b'>
+	<!-- 	<div data-role="content">   
+			<div data-nativedroid-plugin="splashscreen" data-nativedroid-splashscreen-time="4" data-nativedroid-splashscreen-animation="fadeOut" data-nativedroid-background="img/Splash screen.jpg">	
+			</div>
+		</div> -->
+		
+        <div data-role="header"  data-tap-toggle="false" data-theme='b' >
+				<div class="wrapper">
+					<img src="img/header.png" class="img-responsive">
+					<div class="title">
+						<span class="first-title">Contact</span> <span class="second-title">Us</span>
+					</div>
+				</div>
+        </div>
+        
+        <div data-role="content">
+				<div class="wrapper-contact">
+					<div class="section-info ">
+						<img class="absolute-img" src="img/contactus_location.png" width="100px">
+						<div class="section-detail-info">
+						<span class="font-line1">Address</span><br>
+						<span class="font-line2">Raja Wisata Management</span><br>
+						<span class="font-line3">Jl.Delima Raya No.8</span><br>
+						<span class="font-line4">Perumnas Klender, Jakarta Timur 13460</span>
+						</div>
+					</div>
+						<div class="section-info margin-contact-2">
+							<img class="absolute-img contact-2"  src="img/websites.png" width="100px">
+							<div class="section-detail-info" id="section-detail-info-contact">
+							<span class="font-line1">Websites</span><br>
+							<span class="font-line4" onClick="window.open('http://www.raja-wisata.com', '_system', 'location=no');">www.raja-wisata.com</span><br>
+							<span class="font-line4" onClick="window.open('http://www.rajawisata.co.id', '_system', 'location=no');">www.rajawisata.co.id</span><br>
+							<span class="font-line4" onClick="window.open('http://www.tripgabungan.com', '_system', 'location=no');">www.tripgabungan.com</span><br>
+							</div>
+						</div>
+					
+						<div class="section-info margin-contact-2">
+						<img class="absolute-img contact-2" id="contact-jam" src="img/contactus_timehour.png" width="100px">
+						<div class="section-detail-info"  id="section-detail-info-jam">
+						<span class="font-line1">Office Hour</span><br>
+						<span class="font-line2">09.00-18.00</span><br>
+						<span class="font-line3">Monday till Saturday</span><br>
+						</div>
+						</div>
+							
+						<div class="section-info" id="section-info">
+						<img class="absolute-img contact-2 " src="img/contactus_telephone.png" width="100px">
+						<div class="section-detail-info contact-3 ">
+						<span class="font-line1">Contact</span><br>
+						<span class="font-line2">021 8661 7300</span><br>
+						<span class="font-line-4">( Monday to Saturday Only )</span><br>
+						<span class="font-line-4">if any urgent please call our consultant below</span>
+							<div class="list-number">
+							<li><div style="font-weight:normal; font-size:15px;">Deby	<b>: 0813 6557 6555</b></div></li>
+							<li><div style="font-weight:normal; font-size:15px;">Aldy	<b>: 0813 6557 6555</b></div></li>
+							<li><div style="font-weight:normal; font-size:15px;">Wibi	<b>: 0813 6557 6555</b></div></li>
+							<li style="list-style:none; font-size:13px;"><i>*whatsapp available</i></li>
+							</div>
+							<br>
+						<div class="contact-social">
+							<img src="img/icon_bbm.png" width="30px"/><span class="number">2AE9BBF0(nol)</span><br>
+							<img src="img/icon_mail.png" width="30px"/><span class="number"><li>marketing@raja-wisata.com</li><li style="margin-top:5px;">info@raja-wisata.com</li></span>
+						</div>
+						</div>
+						</div>
+					</div>
+		<div data-position="fixed" data-tap-toggle="false" data-role="footer" data-tap-toggle="false" data-theme='b'>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" onClick="tour_package()"><img src="img/menu_tourpackage.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px"><!-- <span class="footer-title1">Tour</span> <span  class="footer-title2">Package<span> --></a></li>
+					<li><a href="#" onClick="travel_package()"><img src="img/menu_travelnotes.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Travel </span> <span  class="footer-title2">Notes<span> --></a></li>
+					<li><a href="#" onClick="about_us()"><img src="img/menu_aboutus.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">About</span> <span  class="footer-title2">Us<span> --></a></li>
+					<li style="background:#4d7284;"><a href="#" onClick="contact_us()"><img src="img/menu_contact_us.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Contact</span> <span  class="footer-title2">Us<span> --></a></li>
+				</ul>
+			</div>
+		</div>
+    </div>    
+   
+     <script src="js/nativedroid.script.js"></script>
+    </body>
+</html>

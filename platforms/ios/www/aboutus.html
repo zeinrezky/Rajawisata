@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	 <head>
+        <title>Raja Wisata</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+          <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' /> 
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+		
+		<!-- Custom Style -->
+        <link rel="stylesheet" href="css/style.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/grid_bs.css" id='jQMnDColor' />
+		
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <script src="js/core_api.js"></script>
+        <script src="js/about.js"></script>
+		<script>
+		function tour_package(){
+				window.location = "index.html";
+			}
+			function travel_package(){
+				window.location = "travelpackage.html";
+			}
+			function about_us(){
+				window.location = "aboutus.html";
+			}
+			function contact_us(){
+				window.location = "contactus.html";
+			}
+		</script>
+		<style>
+		ol{
+			text-align:justify !important;
+			padding:15px !important;
+			padding-top: 0px  !important;
+			padding-left: 25px  !important;
+			padding-right: 0px  !important;
+			padding-bottom: 39px  !important;
+			margin: 7px 0px 7px 0px !important;
+		}
+		</style>
+    </head>
+ 
+	<body>
+     <div data-role="page" data-theme='b' style="background:#24495c !important;">
+	<!-- 	<div data-role="content">   
+			<div data-nativedroid-plugin="splashscreen" data-nativedroid-splashscreen-time="4" data-nativedroid-splashscreen-animation="fadeOut" data-nativedroid-background="img/Splash screen.jpg">	
+			</div>
+		</div> -->
+		
+        <div data-role="header"  data-tap-toggle="false" data-theme='b' >
+				<div class="wrapper">
+					<img src="img/header.png" class="img-responsive">
+					<div class="title">
+						<span class="first-title">About</span> <span class="second-title">Us</span>
+					</div>
+				</div>
+        </div>
+        
+        <div data-role="content">
+				<div class="trip" style="height:inherit;">
+					<div data-role="tabs" class="no-tabs-padding">
+						<div data-role="navbar" >
+							<ul>
+								<li  style="background:#326a83;"><a href="#about"  class="private-trip ui-btn-active" >About Raja<br> Wisata</a></li>
+								<li style="background:#2b5970;"><a href="#term"  class="open-trip term-bg">Term And <br>Condition</a></li>
+								<li style="background:#24495c;"><a href="#ourteam"  class="open-trip" >Our<br>Team</a></li>
+							</ul>
+						</div>
+							<div class="about-rw" id="about">
+								<div id="about1"></div>
+							</div>
+							<div class="about-rw term" id="term">
+								<div id="term"></div>
+							</div>
+							<div class="about-rw our_team" id="ourteam">
+								<div class="wrapper-team" id="team">
+									
+								</div>
+							</div>
+					</div>
+				</div>
+        </div>
+		<div data-position="fixed" data-tap-toggle="false" data-role="footer" data-tap-toggle="false" data-theme='b'>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" onClick="tour_package()"><img src="img/menu_tourpackage.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px"><!-- <span class="footer-title1">Tour</span> <span  class="footer-title2">Package<span> --></a></li>
+					<li><a href="#" onClick="travel_package()"><img src="img/menu_travelnotes.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Travel </span> <span  class="footer-title2">Notes<span> --></a></li>
+					<li style="background:#4d7284;"><a href="#" onClick="about_us()"><img src="img/menu_aboutus.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">About</span> <span  class="footer-title2">Us<span> --></a></li>
+					<li><a href="#" onClick="contact_us()"><img src="img/menu_contact_us.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Contact</span> <span  class="footer-title2">Us<span> --></a></li>
+				</ul>
+			</div>
+		</div>
+    </div>    
+   
+     <script src="js/nativedroid.script.js"></script>
+    </body>
+</html>

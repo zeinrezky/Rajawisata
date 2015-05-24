@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Raja Wisata</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+     <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' /> 
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />
+		
+		<!-- Custom Style -->
+        <link rel="stylesheet" href="css/style.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/grid_bs.css" id='jQMnDColor' />
+		
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+		<script src="js/core_api.js"></script>
+		<script src="js/bookPrivate.js"></script>
+		
+		<script>
+			
+			function tour_package(){
+				window.location = "index.html";
+			}
+			function travel_package(){
+				window.location = "travelpackage.html";
+			}
+			function about_us(){
+				window.location = "aboutus.html";
+			}
+			function contact_us(){
+				window.location = "contactus.html";
+			}
+			function tour_event(){
+				window.location = "travel_event.html";
+			}
+		</script>
+		
+    </head>
+    <body>
+     <div data-role="page" data-theme='b'>
+	<!-- 	<div data-role="content">   
+			<div data-nativedroid-plugin="splashscreen" data-nativedroid-splashscreen-time="4" data-nativedroid-splashscreen-animation="fadeOut" data-nativedroid-background="img/Splash screen.jpg">	
+			</div>
+		</div> -->
+		
+        <div data-role="header"  data-tap-toggle="false" data-theme='b' >
+				<div class="wrapper">
+					<img src="img/header.png" class="img-responsive">
+					<div class="title">
+						<span class="first-title">BOOK</span> <span class="second-title">NOW-PRIVATE TRIP</span>
+					</div>
+				</div>
+        </div>
+        
+        <div data-role="content">
+			<div class="wrapper-booking">
+				<form>
+					<label>Full Name</label>
+					<input type="text" id="fname" class="input-booking" data-ajax="false" />
+					<label>Email</label>
+					<input type="email" id="email" class="input-booking" data-ajax="false"/>
+					<label>Address</label>
+					<input type="text"  id="alamat" class="input-booking" data-ajax="false"/>
+					<label>Telephone</label>
+					<input type="number" id="telephone" class="input-booking" data-ajax="false"/>
+						<div data-role="navbar" >
+							<ul>
+								<li>
+									 <div class="wrapper-date">							
+										<img class="set-img" src="img/icon_calender.png" width="35px">
+										<div class="form-date">
+										<label>Sailing Date</label>
+										<input type="date" id="date1" class="input-booking" data-role="date" />
+										</div>
+									 </div>
+								</li>
+								<li>
+								 <div class="wrapper-date">							
+									<img class="set-img" src="img/icon_calender.png" width="35px">
+									<div class="form-date">
+									<label>Date Of Return</label>
+									<input type="date" id="date2" class="input-booking" data-role="date"/>
+									</div>
+								 </div>
+								</li>
+							</ul>
+						</div>					 
+						<div class="select-booking">
+						<select id="select-native-1" data-ajax="false">
+							<option value="">Number Of Group :</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+						</select>
+					</div>
+					<div style="margin-top:5px;">
+					<input  style="text-align:center; cursor:pointer;" type="button" value="Submit" onclick="currentPage.add()" data-ajax="false" data-role="none" class="submit-booking"/>
+					</form>
+					</div>
+			</div>
+		<div data-position="fixed" data-tap-toggle="true" data-role="footer" data-theme='b'>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" onClick="tour_package()"><img src="img/menu_tourpackage.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px"><!-- <span class="footer-title1">Tour</span> <span  class="footer-title2">Package<span> --></a></li>
+					<li><a href="#" onClick="travel_package()"><img src="img/menu_travelnotes.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Travel </span> <span  class="footer-title2">Notes<span> --></a></li>
+					<li><a href="#" onClick="about_us()"><img src="img/menu_aboutus.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">About</span> <span  class="footer-title2">Us<span> --></a></li>
+					<li><a href="#" onClick="contact_us()"><img src="img/menu_contact_us.png" class="blIcon " style="margin:auto; margin-top:-5px;" width="60px" ><!-- <span class="footer-title1">Contact</span> <span  class="footer-title2">Us<span> --></a></li>
+				</ul>
+			</div>
+		</div>
+    </div>    
+   
+     <script src="js/nativedroid.script.js"></script>
+    </body>
+</html>
